@@ -36,6 +36,7 @@ const usePostsInfiniteQuery = (queary: PostQuery) => {
     staleTime: 1 * 60 * 1000,
     placeholderData: keepPreviousData,
     initialPageParam: 1,
+    // All pages contiene todas las paginas que nosotros hemos obtenido del backend
     getNextPageParam: (lastPage, allPages) => {
       return lastPage.length > 0 ? allPages.length + 1 : undefined;
     },
