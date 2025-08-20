@@ -1,12 +1,19 @@
 import "./App.css";
-import TodoForm from "./react-query/TodoForm";
-import TodoList from "./react-query/TodoList";
+import AuthProvider from "./state-management/auth/AuthProvider";
+import CounterZustand from "./state-management/counter/CounterZustand";
+
+import HomePage from "./state-management/HomePage";
+import NavBar from "./state-management/NavBar";
+import TasksProvider from "./state-management/tasks/TasksProvider";
 
 function App() {
   return (
     <>
-      <TodoForm />
-      <TodoList />
+      <TasksProvider>
+        <CounterZustand />
+        <NavBar />
+        <HomePage />
+      </TasksProvider>
     </>
   );
 }
